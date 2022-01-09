@@ -1,4 +1,4 @@
-#include "basic_drawing.hpp"
+#include "basic/basic_drawing.hpp"
 
 namespace basic {
 namespace basic_drawing {
@@ -74,6 +74,5 @@ int work() {
     return (0);
 }
 } // namespace impl
-using basic::basic_drawing::impl::work;
 } // namespace basic_drawing
 } // namespace basic

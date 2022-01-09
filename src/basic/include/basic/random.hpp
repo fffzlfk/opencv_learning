@@ -14,15 +14,15 @@ namespace impl {
 using namespace cv;
 
 /// Global Variables
-const int NUMBER = 100;
-const int DELAY = 5;
+constexpr int NUMBER = 100;
+constexpr int DELAY = 5;
 
-const int window_width = 900;
-const int window_height = 600;
-const int x_1 = -window_width / 2;
-const int x_2 = window_width * 3 / 2;
-const int y_1 = -window_width / 2;
-const int y_2 = window_width * 3 / 2;
+constexpr int window_width = 900;
+constexpr int window_height = 600;
+constexpr int x_1 = -window_width / 2;
+constexpr int x_2 = window_width * 3 / 2;
+constexpr int y_1 = -window_width / 2;
+constexpr int y_2 = window_width * 3 / 2;
 
 /// Function headers
 static Scalar randomColor(RNG &rng);
