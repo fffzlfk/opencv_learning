@@ -4,11 +4,11 @@
 #include <opencv2/highgui.hpp>
 #include <opencv2/imgproc.hpp>
 
-#define w 400
-
 namespace basic {
 namespace basic_drawing {
 namespace impl {
+#define w 400
+
 using namespace cv;
 
 void MyEllipse(Mat img, double angle);
