@@ -2,6 +2,8 @@ add_library(transformations
     filter_2d.cpp
     copy_make_border.cpp
     sobel_derivatives.cpp
+    laplace.cpp
+    canny.cpp
 )
 
 target_include_directories(transformations PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
