@@ -9,7 +9,9 @@
 // #include <transformations/copy_make_border.hpp>
 // #include <transformations/sobel_derivatives.hpp>
 // #include <transformations/laplace.hpp>
-#include <transformations/canny.hpp>
+// #include <transformations/canny.hpp>
+
+#include <cuda/cuda_gauss.hpp>
 int main(int argc, char *argv[]) {
     // basic::basic_drawing::work();
     // basic::random::work();
@@ -21,6 +23,7 @@ int main(int argc, char *argv[]) {
     // transformations::copy_make_border::work(argc, argv);
     // transformations::sobel_derivatives::work(argc, argv);
     // transformations::laplace::work(argc, argv);
-    transformations::canny::work(argc, argv);
+    // transformations::canny::work(argc, argv);
+    cuda::cuda_gauss::work(argc, argv);
     return 0;
 }
