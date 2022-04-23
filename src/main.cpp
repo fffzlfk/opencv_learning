@@ -10,20 +10,36 @@
 // #include <transformations/sobel_derivatives.hpp>
 // #include <transformations/laplace.hpp>
 // #include <transformations/canny.hpp>
+#include "isa/include/isa/info_entropy.hpp"
+#include <isa/laplacian.hpp>
+#include <isa/roberts.hpp>
+#include <isa/tenengrad.hpp>
+#include <isa/var.hpp>
+#include <isa/smd.hpp>
+#include <isa/smd2.hpp>
+#include <isa/max_min.hpp>
+#include <isa/info_entropy.hpp>
+using namespace isa;
 
-#include <cuda/cuda_gauss.hpp>
 int main(int argc, char *argv[]) {
-    // basic::basic_drawing::work();
-    // basic::random::work();
-    // basic::blur::work(argc, argv);
-    // basic::opening_closing_hats::work(argc, argv);
-    // basic::hit_or_miss::work();
-    // basic::morph_lines_detection::work(argc, argv);
-    // transformations::filter_2d::work(argc, argv);
-    // transformations::copy_make_border::work(argc, argv);
-    // transformations::sobel_derivatives::work(argc, argv);
-    // transformations::laplace::work(argc, argv);
-    // transformations::canny::work(argc, argv);
-    cuda::cuda_gauss::work(argc, argv);
+    if (argc != 2) {
+        printf(
+            "%s: Invalid number of command line arguments. Exiting program\n",
+            argv[0]);
+        printf("Usage: %s [image]", argv[0]);
+    }
+
+    auto img = cv::imread(argv[1], cv::IMREAD_COLOR);
+    cv::cvtColor(img, img, cv::COLOR_BGR2GRAY);
+
+    var(img);
+    roberts(img);
+    tenengrad(img);
+    laplacian(img);
+    smd(img);
+    smd2(img);
+    max_min(img);
+    info_entropy(img);
+
     return 0;
 }
