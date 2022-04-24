@@ -9,8 +9,8 @@ void tenengrad(const Mat &img) {
     const auto cols = img.cols;
     const auto rows = img.rows;
     ulong sum = 0;
-    for (size_t x = 1; x < cols - 1; x++) {
-        for (size_t y = 1; y < rows - 1; y++) {
+    for (auto x = 1; x < cols - 1; x++) {
+        for (auto y = 1; y < rows - 1; y++) {
             int dx, dy;
             dx = (-1 * img.at<uchar>(y - 1, x - 1)) +
                  (-2 * img.at<uchar>(y, x - 1)) +
@@ -30,6 +30,6 @@ void tenengrad(const Mat &img) {
     }
     auto res = static_cast<double>(sum) / (cols * rows);
     timer.Stop();
-    printf("res:\t%f\ttimer:\t%f\n", res, timer.Elapsed());
+    printf("tenengrad\tres:\t%f\ttime:\t%f\n", res, timer.Elapsed());
 }
 } // namespace isa

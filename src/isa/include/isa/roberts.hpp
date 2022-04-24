@@ -18,6 +18,6 @@ void roberts(const cv::Mat &img) {
     }
     auto res = static_cast<double>(sum) / (cols * rows);
     timer.Stop();
-    printf("res:\t%f\ttimer:\t%f\n", res, timer.Elapsed());
+    printf("roberts\tres:\t%f\ttime:\t%f\n", res, timer.Elapsed());
 }
 } // namespace isa

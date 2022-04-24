@@ -5,6 +5,8 @@ project(cmake_learning LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED on)
 
+add_compile_options(-std=c++17 -Wall -Wextra -Werror)
+
 # add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/src/basic)
 # add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/src/transformations)
 # add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/src/cuda)
